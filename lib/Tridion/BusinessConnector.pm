@@ -1,4 +1,4 @@
-# SOAP::BusinessConnector
+# Tridion::BusinessConnector
 # CVS Version $Id:$
 # written by Toby Corkindale (toby (at) corkindale.net)
 # Copyright (c) 2004 Toby Corkindale, All rights reserved.
@@ -16,7 +16,7 @@
 # content management system. 
 
 package Tridion::BusinessConnector;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 use strict;
 use warnings;
 
@@ -196,7 +196,7 @@ __END__
 
 =head1 NAME
 
-SOAP::BusinessConnector - Interface to Tridion's "Business Connector"
+Tridion::BusinessConnector - Interface to Tridion's "Business Connector"
 
 =head1 VERSION
 
