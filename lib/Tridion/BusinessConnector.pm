@@ -1,7 +1,8 @@
 # Tridion::BusinessConnector
-# CVS Version $Id:$
-# written by Toby Corkindale (toby (at) corkindale.net)
+# written by Toby Corkindale (perl (at) corkindale.net)
 # Copyright (c) 2004 Toby Corkindale, All rights reserved.
+#
+# $Id: BusinessConnector.pm 18 2005-12-21 16:38:11Z tjc $
 #
 # This Perl module is distributed under the terms of the LGPL:
 # This library is free software; you can redistribute it and/or
@@ -16,29 +17,19 @@
 # content management system. 
 
 package Tridion::BusinessConnector;
-our $VERSION = '0.03';
 use strict;
 use warnings;
 
-require Exporter;
+use XML::LibXML;
 
-our @ISA = qw(Exporter);
+our $VERSION = '0.04';
 
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-
-our @EXPORT_OK = ( );
-
-our @EXPORT = qw();
-
+# Tridion namespaces: (Current as of 2004 - may need to be updated one day?)
 our $TCM_NS = 'http://www.tridion.com/ContentManager/5.0';
 our $TCMAPI_NS = 'http://www.tridion.com/ContentManager/5.0/TCMAPI';
 
-# Preloaded methods go here.
 
-use XML::LibXML;
-
+# Initialise the SOAP subsystem:
 use SOAP::Lite
     on_fault => sub {
         my $soap = shift;
@@ -201,12 +192,12 @@ Tridion::BusinessConnector - Interface to Tridion's "Business Connector"
 =head1 VERSION
 
   Version 0.02, released April 2004
-  CVS Version $Id:$
+  CVS Version $Id: BusinessConnector.pm 18 2005-12-21 16:38:11Z tjc $
 
 =head1 NOTICE
 
   Written by Toby Corkindale (toby (at) corkindale.net)
-  Copyright (c) 2004 Toby Corkindale.
+  Copyright (c) 2004, 2005 Toby Corkindale.
 
 This Perl module is distributed under the terms of the LGPL:
 
@@ -334,5 +325,4 @@ permissions, status, etc. but any attempt to save an item back that includes
 that information will fail! So, remember to strip out it out before saving..
 
 =cut
-
 
